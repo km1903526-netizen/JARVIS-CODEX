@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050914">
+  <title>JARVIS CODEX v1.0</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="core-orb"><span></span></div>
+        <div>
+          <h1>JARVIS <b>CODEX</b></h1>
+          <p>PERSONAL AI SYSTEM · v1.0</p>
+        </div>
+      </div>
+      <div class="status-pill"><i></i><span id="systemStatus">ONLINE</span></div>
+    </header>
+
+    <main class="layout">
+      <aside class="sidebar">
+        <section class="panel system-panel">
+          <div class="panel-title">SYSTEM STATUS</div>
+          <div class="metric"><span>CORE</span><strong>READY</strong></div>
+          <div class="metric"><span>VOICE</span><strong id="voiceState">READY</strong></div>
+          <div class="metric"><span>MEMORY</span><strong id="memoryCount">0</strong></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-title">COMMANDS</div>
+          <button class="command" data-command="/status">/status <small>System status</small></button>
+          <button class="command" data-command="/code">/code <small>Codex mode</small></button>
+          <button class="command" data-command="/debug">/debug <small>Debug mode</small></button>
+          <button class="command" data-command="/research">/research <small>Research mode</small></button>
+          <button class="command" data-command="/clear">/clear <small>Clear chat</small></button>
+        </section>
+
+        <section class="panel project-panel">
+          <div class="panel-title">PROJECT</div>
+          <input id="projectName" type="text" placeholder="Nombre del proyecto">
+          <button id="saveProject" class="primary">Guardar proyecto</button>
+        </section>
+      </aside>
+
+      <section class="chat-panel">
+        <div class="chat-header">
+          <div>
+            <span class="eyebrow">JARVIS CORE</span>
+            <h2>Neural Interface</h2>
+          </div>
+          <div class="mode" id="modeLabel">GENERAL</div>
+        </div>
+
+        <div id="messages" class="messages">
+          <article class="message jarvis">
+            <div class="avatar">J</div>
+            <div class="bubble">
+              <div class="sender">JARVIS CODEX</div>
+              <p>Buenas. Sistemas principales en línea. ¿Qué deseas hacer?</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="composer">
+          <button id="micButton" class="icon-btn" title="Hablar">🎙️</button>
+          <textarea id="userInput" rows="1" placeholder="Escribe un comando para JARVIS..."></textarea>
+          <button id="sendButton" class="send-btn">ENVIAR</button>
+        </div>
+        <div class="hint">Enter para enviar · Shift+Enter para nueva línea · Usa /help para comandos</div>
+      </section>
+
+      <aside class="right-panel">
+        <section class="panel core-panel">
+          <div class="panel-title">CORE ACTIVITY</div>
+          <div class="reactor">
+            <div class="ring ring-a"></div>
+            <div class="ring ring-b"></div>
+            <div class="reactor-core">J</div>
+          </div>
+          <div class="activity" id="activity">STANDBY</div>
+        </section>
+
+        <section class="panel memory-panel">
+          <div class="panel-title">LOCAL MEMORY</div>
+          <div id="memoryList" class="memory-list">
+            <p class="empty">No hay recuerdos guardados.</p>
+          </div>
+        </section>
+      </aside>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

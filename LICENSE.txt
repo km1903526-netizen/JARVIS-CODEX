@@ -1,0 +1,4 @@
+JARVIS CODEX v1.0
+Proyecto personal de interfaz web.
+
+Este proyecto se proporciona como base de desarrollo. Añade tus propias dependencias, servicios y configuración de backend según las necesidades del proyecto.
